@@ -1,17 +1,17 @@
 package com.ersubhadip.newsify.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.ersubhadip.newsify.R
+import com.bumptech.glide.Glide
+import com.ersubhadip.newsify.databinding.NewsItemLayoutBinding
 import com.ersubhadip.newsify.models.Article
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticlesViewHolder>() {
 
-    inner class ArticlesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class ArticlesViewHolder(val binding:NewsItemLayoutBinding) : RecyclerView.ViewHolder(binding.root)
 
     //DiffUtils Setup
     private val differCallbacks = object : DiffUtil.ItemCallback<Article>() {
@@ -32,16 +32,15 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticlesViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticlesViewHolder {
-        return ArticlesViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.news_item_layout, parent, false)
-        )
+        val binding = NewsItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        return ArticlesViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ArticlesViewHolder, position: Int) {
-        holder.itemView.apply {
-            //Use ViewBinding
-            TODO("Read about viewBinding before implementing it")
-        }
+       holder.binding.apply {
+             TODO("Do it later : Glide error")
+       }
     }
 
     override fun getItemCount(): Int {
