@@ -16,6 +16,7 @@ class NewsActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityNewsBinding
     lateinit var newsViewModel:NewsViewModel
+    //qwdkqw
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
